@@ -1,0 +1,79 @@
+<?php
+
+namespace App\Controllers\Api;
+
+use App\Controllers\BaseController;
+use App\Models\SoalModel;
+use App\Models\SiswaModel;
+use CodeIgniter\HTTP\ResponseInterface;
+
+class ApiController extends BaseController
+{
+    protected $soalModel;
+    protected $siswaModel;
+
+    public function __construct()
+    {
+        $this->soalModel = new SoalModel();
+        $this->siswaModel = new SiswaModel();
+    }
+
+    public function index()
+    {
+        $data = $this->soalModel->orderBy('id', 'DESC')->findAll();
+
+        return $this->response->setJSON($data);
+    }
+
+    public function readSoal()
+    {
+        $data = $this->soalModel->orderBy('id', 'DESC')->findAll();
+
+        return $this->response->setJSON($data);
+    }
+
+    public function readSoalById($id)
+    {
+        $data = $this->soalModel->find($id);
+
+        if ($data) {
+            return $this->response->setJSON($data);
+        }
+
+        return $this->response->setJSON([
+            'message' => 'Data tidak ditemukan'
+        ]);
+    }
+
+    public function submitScore()
+    {
+        $nama  = $this->request->getPost('nama');
+        $level = $this->request->getPost('level');
+        $score = $this->request->getPost('score');
+
+        if (!$nama || !$level || !$score) {
+            return $this->response->setJSON([
+                'success' => false,
+                'message' => 'Mohon lengkapi data: nama, level, score'
+            ]);
+        }
+
+        try {
+            $this->siswaModel->insert([
+                'nama'  => $nama,
+                'level' => $level,
+                'score' => $score,
+            ]);
+
+            return $this->response->setJSON([
+                'success' => true,
+                'message' => 'Data berhasil disimpan'
+            ]);
+        } catch (\Exception $e) {
+            return $this->response->setJSON([
+                'success' => false,
+                'message' => $e->getMessage()
+            ]);
+        }
+    }
+}
