@@ -47,9 +47,17 @@ class ApiController extends BaseController
 
     public function submitScore()
     {
-        $nama  = $this->request->getPost('nama');
-        $level = $this->request->getPost('level');
-        $score = $this->request->getPost('score');
+        $json = $this->request->getJSON(true);
+
+        if ($json) {
+            $nama  = $json['nama'] ?? null;
+            $level = $json['level'] ?? null;
+            $score = $json['score'] ?? null;
+        } else {
+            $nama  = $this->request->getPost('nama');
+            $level = $this->request->getPost('level');
+            $score = $this->request->getPost('score');
+        }
 
         if (!$nama || !$level || !$score) {
             return $this->response->setJSON([
