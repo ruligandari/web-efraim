@@ -59,7 +59,7 @@ class ApiController extends BaseController
             $score = $this->request->getPost('score');
         }
 
-        if (!$nama || !$level || !$score) {
+        if (empty($nama) || $level === null || $level === '' || $score === null || $score === '') {
             return $this->response->setJSON([
                 'success' => false,
                 'message' => 'Mohon lengkapi data: nama, level, score'
