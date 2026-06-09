@@ -15,14 +15,14 @@
 
 <!-- Page Heading -->
 <div class="mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-    <h1 class="text-2xl font-bold text-gray-800 dark:text-white">Data Soal</h1>
+    <h1 class="text-2xl font-bold text-gray-800 dark:text-white">Kelola Soal</h1>
 </div>
 
 <!-- Main Card -->
 <div class="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-gray-200 dark:border-slate-700 overflow-hidden mb-8">
     <div class="p-6 border-b border-gray-200 dark:border-slate-700 bg-gray-50/50 dark:bg-slate-800/50 flex items-center justify-between">
         <button onclick="document.getElementById('tambahModal').classList.remove('hidden')" class="px-4 py-2 bg-primary hover:bg-blue-600 text-white rounded-lg shadow-sm transition-all font-medium flex items-center justify-center gap-2">
-            <i class="fas fa-plus"></i> Tambah Data Soal
+            <i class="fas fa-plus"></i> Tambah Soal
         </button>
     </div>
     

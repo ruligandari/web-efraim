@@ -19,7 +19,7 @@ class SoalController extends BaseController
         $soal = $this->soalModel->orderBy('id', 'ASC')->findAll();
 
         $data = [
-            'title' => 'Data Soal',
+            'title' => 'Kelola Soal',
             'soal' => $soal,
         ];
 

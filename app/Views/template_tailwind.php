@@ -84,14 +84,14 @@
                     Menu
                 </div>
 
-                <a href="<?= base_url('admin/soal') ?>" class="flex items-center px-3 py-2.5 rounded-lg transition-all <?= ($title == 'Data Soal') ? 'bg-white text-primary shadow-md font-bold dark:bg-slate-800 dark:text-blue-400' : 'text-blue-100 hover:bg-white/10 dark:hover:bg-slate-800/50 hover:text-white' ?>">
-                    <i class="fas fa-fw fa-tachometer-alt w-6"></i>
-                    <span class="font-medium ml-2">Data Soal</span>
+                <a href="<?= base_url('admin/soal') ?>" class="flex items-center px-3 py-2.5 rounded-lg transition-all <?= ($title == 'Kelola Soal') ? 'bg-white text-primary shadow-md font-bold dark:bg-slate-800 dark:text-blue-400' : 'text-blue-100 hover:bg-white/10 dark:hover:bg-slate-800/50 hover:text-white' ?>">
+                    <i class="fas fa-question-circle w-5 text-center text-lg"></i>
+                    <span class="font-medium ml-2">Kelola Soal</span>
                 </a>
 
-                <a href="<?= base_url('admin/siswa') ?>" class="flex items-center px-3 py-2.5 rounded-lg transition-all <?= ($title == 'Data Siswa') ? 'bg-white text-primary shadow-md font-bold dark:bg-slate-800 dark:text-blue-400' : 'text-blue-100 hover:bg-white/10 dark:hover:bg-slate-800/50 hover:text-white' ?>">
-                    <i class="fas fa-fw fa-users w-6"></i>
-                    <span class="font-medium ml-2">Data Siswa</span>
+                <a href="<?= base_url('admin/siswa') ?>" class="flex items-center px-3 py-2.5 rounded-lg transition-all <?= ($title == 'Kelola Nilai dan Siswa') ? 'bg-white text-primary shadow-md font-bold dark:bg-slate-800 dark:text-blue-400' : 'text-blue-100 hover:bg-white/10 dark:hover:bg-slate-800/50 hover:text-white' ?>">
+                    <i class="fas fa-users w-5 text-center text-lg"></i>
+                    <span class="font-medium ml-2">Kelola Nilai dan Siswa</span>
                 </a>
             </nav>
 

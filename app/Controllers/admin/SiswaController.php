@@ -20,7 +20,7 @@ class SiswaController extends BaseController
         $siswa = $this->siswaModel->orderBy('id', 'DESC')->findAll();
 
         $data = [
-            'title' => 'Data Siswa',
+            'title' => 'Kelola Nilai dan Siswa',
             'siswa' => $siswa
         ];
 
