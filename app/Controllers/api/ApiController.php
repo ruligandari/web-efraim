@@ -32,9 +32,9 @@ class ApiController extends BaseController
         return $this->response->setJSON($data);
     }
 
-    public function readSoalById($id)
+    public function readSoalById($level)
     {
-        $data = $this->soalModel->find($id);
+        $data = $this->soalModel->where('level', $level)->orderBy('id', 'RANDOM')->first();
 
         if ($data) {
             return $this->response->setJSON($data);
